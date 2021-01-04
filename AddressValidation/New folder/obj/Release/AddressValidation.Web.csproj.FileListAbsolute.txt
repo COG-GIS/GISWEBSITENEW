@@ -1,0 +1,5 @@
+D:\Workspace\Development\VS2012\ArcGIS_10.2\Silverlight\AddressValidation\AddressValidation.Web\bin\AddressValidation.Web.dll
+D:\Workspace\Development\VS2012\ArcGIS_10.2\Silverlight\AddressValidation\AddressValidation.Web\bin\AddressValidation.Web.pdb
+D:\Workspace\Development\VS2012\ArcGIS_10.2\Silverlight\AddressValidation\AddressValidation.Web\obj\Release\AddressValidation.Web.dll
+D:\Workspace\Development\VS2012\ArcGIS_10.2\Silverlight\AddressValidation\AddressValidation.Web\obj\Release\AddressValidation.Web.pdb
+D:\Workspace\Development\VS2012\ArcGIS_10.2\Silverlight\AddressValidation\AddressValidation.Web\obj\Release\AddressValidation.Web.csprojResolveAssemblyReference.cache

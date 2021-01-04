@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GIS Portal &middot; City of Glendale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="City of Glendale GIS Website">
+    <meta name="author" content="James Delaittre">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 20px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 20px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 10px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 300px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+
+
+.carousel-caption2 {
+       background-color:  rgba(0,0,0,.75);;
+      position: absolute;
+      max-width: 303px;
+      padding: 20px 20px;
+      margin-top: 100px;
+      margin-left: 70%;
+	  border-radius: 25px;
+
+    }
+    .carousel-caption2 h1,
+    .carousel-caption2 .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 2px 2px rgba(0,0,0,.2);
+    }
+    
+    
+
+    .carousel-caption {
+       background-color:  rgba(0,0,0,.75);;
+      position: relative;
+      max-width: 303px;
+      padding: 20px 20px;
+      margin-top: 100px;
+      margin-left: 70%;
+	  border-radius: 25px;
+
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 2px 2px rgba(0,0,0,.2);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 10px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 20px; /* Vertically center images part 1: add padding above and below text. */
+     padding-left: 50px; /* Vertically center images part 1: add padding above and below text. */
+     padding-right: 50px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -20px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 30px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+        
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/img/GlendaleLogo2.png">
+  </head>
+
+  <body>
+
+<script type="text/javascript">
+<!--
+ 
+var internalURL = 'http://gis.glendaleaz.com/GISWebsiteTest/Data.html';
+var publicURL = 'http://www.google.com';
+var detectionCounter = 0;
+var detectionTimeOut = 5;
+var detectionImage = 'http://gnn.glendaleaz.com/images/top_nav_2.gif';
+var detectionElement = document.createElement('img');
+detectionElement.src = detectionImage;
+var trigger = 0;
+ 
+function detectIntranet() {
+    detectionCounter = detectionCounter + 1;
+    //  alert('Attempt ' + detectionCounter + ': Sniffing intranet connection by loading an internal resource at ' + detectionImage);
+    if (detectionElement.complete) {
+        if (detectionElement.width > 0 && detectionElement.height > 0) {
+      //            alert('Attempt ' + detectionCounter + ': The intranet resource was loaded!');
+      //      window.location = internalURL;
+            var ni = document.getElementById('toolbar');
+            var newdiv = document.createElement('li');
+          //  newdiv.innerHTML = '<li><a href="../intranet">Intranet</a></li>';
+          //  ni.appendChild(newdiv);
+          $('#toolbar').append('<li><a href="../intranet">City Employee Tools</a></li>');
+            trigger = 1;
+        } else {
+           //       alert('Attempt ' + detectionCounter + ': The intranet resource could not be loaded!');
+           // window.location = publicURL;
+        }
+    } else {
+        if (detectionCounter < detectionTimeOut) {
+            setTimeout("detectIntranet()", 1000);
+               //  alert('Attempt ' + detectionCounter + ': Still trying to load: ' + detectionImage);
+                 detectionCounter++;
+        } else {
+            //alert('Attempt ' + detectionCounter + ': Gave up trying to load: ' + detectionImage);
+              trigger = 1;
+        }
+    }
+}
+ 
+window.onload = function () {
+    if(trigger == 0){
+    	detectIntranet();
+    }
+}
+ 
+//-->
+</script>
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="../">City of Glendale - GIS Portal</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav" id = "toolbar">
+                <li><a href="../">Home</a></li>
+                <li><a href="http://data.cog-gis.opendata.arcgis.com/" target="_blank">Data</a></li>
+				<li class="active"><a href="../maps">Maps</a></li>
+				<li><a href="../about">About</a></li>
+                <li><a href="../contactUs">Contact</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+    	<div class="container">
+            <div class="carousel-caption2">
+			<div class="panel panel-default">
+              <h1>Interactive Maps</h1>
+            </div>
+          </div>
+		  </div>
+      <div class="carousel-inner">
+      	<div class="item active">
+          <img src="assets/img/Glitters.JPG" alt="">
+        </div>
+        <div class="item">
+          <img src="assets/img/MyServices.png" alt="">
+        </div>
+		<div class="item">
+          <img src="assets/img/PublicSafety_BigSized2.png" alt="">
+        </div>
+        <div class="item">
+          <img src="assets/img/TransitTrackerRoute.png" alt="">
+        </div>
+        <div class="item">
+          <img src="assets/img/AddressLocator.png" alt="">
+        </div>		
+        <div class="item">
+          <img src="assets/img/Swipe2.png" alt="">
+        </div>
+        <div class="item">
+          <img src="assets/img/ParkFinder.png" alt="">
+        </div>
+		<div class="item">
+          <img src="assets/img/GeneralPlan.png" alt="">
+        </div>
+        <div class="item">
+          <img src="assets/img/AddressFinder.png" alt="">
+        </div>	
+      </div>
+
+    </div><!-- /.carousel -->
+
+
+
+
+ <div class="featurette">
+      	<a href = "http://cog-gis.maps.arcgis.com/apps/Solutions/s2.html?appid=aac760ab1e8e498f99091c14f6bd06d1" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/Capture2.JPG"></a>
+        <h2 class="featurette-heading">Address Finder</h2>
+        <p>Locate addresses within the City of Glendale using an interactive search.</p>
+      </div>
+
+
+ <hr class="featurette-divider">
+
+
+      <div class="featurette">
+		<a href = "http://gis.glendaleaz.com/AddressPointExtract/Default.aspx" target="_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/AddressPointExtract_Thb.png" > </a>
+        <h2 class="featurette-heading">Address Point Extraction</h2>
+        <p>Retrieve address information within a user defined area - with the ability to export addresses to an Excel table.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+    
+
+      <div class="featurette">
+      	<a href = "http://cog-gis.maps.arcgis.com/apps/OnePane/basicviewer/index.html?appid=50ac7bc1064748dbb6f7bdbc67b4e770" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/__Gisweb03_inetpub_wwwroot_Images_GlendaleImagery.jpg"></a>
+        <h2 class="featurette-heading">Aerial Imagery</h2>
+        <p>Displays imagery from 1999-2012 (with Street Annotations at scale of 1:40,000 or greater).</p>
+      </div>
+      
+      
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+      	<a href = "http://gis.glendaleaz.com/AerialSwipe/Default.aspx" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/D_3A_DFung_My_Pictures_Glendale_AerialSwipe_Thb.png"></a>
+        <h2 class="featurette-heading">Aerial Swipe</h2>
+        <p>Compare areas of Glendale over time with overlapping historical imagery.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+
+      <div class="featurette">
+      	<a href = "http://gis.glendaleaz.com/BasicViewer/index.html" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/address4.JPG"></a>
+        <h2 class="featurette-heading">Boundaries</h2>
+        <p>Displays varous boundaries within the City including city limits, City Council districts, and Census areas.</p>
+      </div>
+
+      
+      <hr class="featurette-divider">
+      
+      
+            <div class="featurette">
+      	<a href = "http://cog-gis.maps.arcgis.com/apps/MapTour/index.html?appid=a49a14695e5548109299dcfe86831feb&webmap=a5bf1ea49faf4d3c953abab10b4eab2c" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/maptour.JPG"></a>
+        <h2 class="featurette-heading">Downtown Map Tour</h2>
+        <p>View local destinations through a guided photo map tour.</p>
+      </div>
+          
+	  
+      <hr class="featurette-divider">
+      
+    <div class="featurette">
+      	<a href = "http://gis.glendaleaz.com/MyGlendaleServices/Default.htm" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/glendaleservices.JPG"></a>
+        <h2 class="featurette-heading">My Glendale Services</h2>
+        <p>Identify city services in your area including trash/recycling pickup, library locations, public safety locations and more.</p>
+      </div>
+      
+      
+	  <hr class="featurette-divider">
+      
+      <div class="featurette">
+      	<a href = "http://gis.glendaleaz.com/neighborhood/index.html" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/Neighborhood_sized.png"></a>
+        <h2 class="featurette-heading">Neighborhood Perspective</h2>
+        <p>Access to City of Glendale Neighborhood Information and Local Perspective.</p>
+      </div>
+      
+	  
+      <hr class="featurette-divider">
+	  
+            <div class="featurette">
+      	<a href = "http://gis.glendaleaz.com/ParkFinder/default.htm" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/Capture1.JPG"></a>
+        <h2 class="featurette-heading">Park Finder</h2>
+        <p>View park locations across Glendale including hours of operation, amenities, directions, and photo gallery.</p>
+      </div>
+      
+      <hr class="featurette-divider">
+      
+      <div class="featurette">
+      	<a href = "http://gis.glendaleaz.com/PublicSafety/" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/PublicSafety_Heat_Sized.png"></a>
+        <h2 class="featurette-heading">Public Safety Viewer</h2>
+        <p>Interactive map for querying and displaying Public Safety data with 'Heat Map' effects and Graphical Summary Report.</p>
+      </div>
+      
+      <hr class="featurette-divider">
+      
+      <div class="featurette">
+      	<a href = "http://gis.glendaleaz.com/TransitTracker/" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/TransitTrackerMyLocation.png"></a>
+        <h2 class="featurette-heading">Public Transit Tracker - Mobile</h2>
+        <p>View real-time bus locations and stop schedules based on your current location or for an entire route.</p>
+      </div>
+
+      
+      <hr class="featurette-divider">
+      
+      <div class="featurette">
+      	<a href = "http://cog-gis.maps.arcgis.com/apps/OnePane/basicviewer/index.html?appid=4bbcce954cb942e8aac772286f595c00" target = "_blank">
+        <img class="featurette-image pull-left" width = "200px"  src="assets/img/Capture.JPG"></a>
+        <h2 class="featurette-heading">Zoning & General Plan</h2>
+        <p>Zoning and General Plan Interactive Map for the City of Glendale, Arizona.</p>
+      </div>
+      
+      
+      <hr class="featurette-divider">
+	  
+	  
+    </div><!-- /.container -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+        
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="assets/js/holder/holder.js"></script>
+  </body>
+</html>
